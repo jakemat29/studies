@@ -7,13 +7,29 @@
 mypage
 </title>
 <head>					
- 
+ 	<script language="javascript">
+	var fnames=["jim","jolly"];
+	function copyValue()
+	{
+		document.form1.l_name.value=document.form1.f_name.value;
+    }
+    function validateUname(inp){
+		// This is the correct method of intendation
+		console.log(inp.toLowerCase());
+	    if (fnames.indexOf(inp.toLowerCase())!=-1){
+			document.getElementById("error_msg").innerHTML="username already used";
+		}
+		else{
+			document.getElementById("error_msg").innerHTML="";
+		}
+	} 
+</script>
        <style>
 	
 	   body {background-color: grey}
 	   p {color:black; font-size:150%; }
 	   h1 {color:blue; text-align:center;}
-	   }
+	   .div_style {width:20%; display:inline-block;background-color:green}
       </style>	
 
 </head>
@@ -27,18 +43,25 @@ mypage
 	<iframe src="Helloworld.html" width="200" height=100">			<!demo for the iframe >
   
 	</iframe>
-<form action="http://www.w3schools.com"  method="post">         <!when post method is used the values entered are not shown on the adress bar ; so post method offers more security. get is the default method>
+<form name="form1" action="http://www.w3schools.com"  method="post">         <!when post method is used the values entered are not shown on the address bar ; so post method offers more security. get is the default method>
 <fieldset>
-<legent>Peronal Information</legent>
-<p>First name:
-<input type="text"  name="f_name" ><br></p>
+<legent>Personal Information</legent>
+<p>
+
+<div style="width:100%;"> 
+	<div class="div_style">First name:</div> 
+	<div class="div_style"><input type="text"  name="f_name" id="f_name" onblur="copyValue();" onkeyup="validateUname(this.value);"></div>
+	<div id="error_msg" class="div_style"></div>
+</div>
+<br></p>     <!alert is a javascript function        Document Object Model ios used here.>
 <p>Last name:
 <input type="text" name="l_name"><br></p>
 <p>Sex: <br>    
-<p>Male<input type="radio"  name="sex" ></p>
-<p>Female<input type="radio"  name="sex"></p>
-<p>Other<input type="radio"  name="sex"></p>
-<br>
+<p>Male &nbsp <input type="radio"  name="sex" ></p>
+<p>Female &nbsp <input type="radio"  name="sex"></p>
+<p>Other &nbsp <input type="radio"  name="sex"></p>
+
+</table><br>
 
 <p><input type="submit"  value="submit"></p>
 <fieldset>

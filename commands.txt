@@ -1,0 +1,2 @@
+python -m SimpleHTTPServer
+ctrl+shift+j --- To open google chrome developer console

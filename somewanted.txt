@@ -1,0 +1,1 @@
+onblur="alert(document.form1.f_name.value);"
