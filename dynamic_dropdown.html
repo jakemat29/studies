@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<script>
+		//Reference: http://stackoverflow.com/questions/8716064/html-js-how-to-change-option-value-of-select-type-using-js
+		function changeContent(){
+			var opt= document.getElementById('dyna').options[0];
+			opt.value =  'Two';
+			opt.text = 'Two';
+		}
+		</script>
+	</head>
+	<body>
+		<form name="test">
+			<select name="dyna" id="dyna">
+				<option value="One">One</option>
+			</select>
+			<input type="button" value="Switch" onclick="changeContent();"></input>
+		</form>
+	</body>
+</html>
