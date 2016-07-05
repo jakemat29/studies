@@ -1,2 +1,11 @@
 python -m SimpleHTTPServer
+ctrl+c ----- to exit from simple http server in command prompt
+
 ctrl+shift+j --- To open google chrome developer console
+
+git status
+git add .
+git status
+git commit -m "appropriate message"
+git push
+ 
