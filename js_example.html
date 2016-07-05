@@ -1,33 +1,42 @@
 <html>
 	<head>
 	<script>
-	var x="john";
-	var y="honai";
-	z=x+' '+y;
-	
+		var x="john";
+		var y="honai";
+		var z=x+' '+y;
+		console.log(z);
+		function celToFah(c){
+			return (9/5*c+32);
+		}
+		function showResult(inp){
+			//celToFah();
+			if(inp==""||isNaN(inp)){
+				document.getElementById('temp').innerHTML='<span style="color:red;">Invalid Entry</span>';
+			}
+			else{
+				console.log(celToFah(inp));
+				document.getElementById('temp').innerHTML=celToFah(inp);
+			}	
+		}
 	</script>
 	</head>
 		<body>
 		
 		<p id="demo">Some studies in javascript  </p>
-		<p id='demo1'>
+		<p id='demo1'> </p>
 		<button onclick="document.getElementById('demo').innerHTML='Wow Wonderful'">Magic</button>
-		<button onclick="document.getElementById('demo')=window.alert('Window Alert Sample')">Window Alert</button>
-		<button onclick="document.getElementById('demo')=document.write('Document Write Sample')">Document Write</button>
+		<button onclick="window.alert('Window Alert Sample')">Window Alert</button>
+		<button onclick="document.write('Document Write Sample')">Document Write</button>
 		<div id="mydiv">
 		<button onclick="document.getElementById('bulb').src='pic_bulbon.gif'"> Turn on Bulb</button>
 		<img src="pic_bulboff.gif" id="bulb">
 		<button onclick="document.getElementById('bulb').src='pic_bulboff.gif'">Turn off Bulb</button>
 		</div>
-		<script>document.getElementById('demo1').innerHTML=z;</script>
-		<form>
+		
+	    
 		<p>Enter the Temperature in Celcius:- <input type="text"; name="tem"; id="tem"></p>
-		</form>
-		<script>
-				
-		/* function celtofah(c){
-	    return (9/5*c+32);
-	    }*/</script>
-		<button onclick="alert(document.getElementById(tem))";>Result</button>
+		<button onclick="showResult(document.getElementById('tem').value)">Result</button>
+		<p id="temp">	</p>
+		
 		</body>
 </html>

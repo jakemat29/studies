@@ -9,3 +9,9 @@ git status
 git commit -m "appropriate message"
 git push
  
+ 
+ 
+ javascript topics to be covered
+ for loop ,while,break , continue,
+ if condition, switch condition,
+ functions, arrays

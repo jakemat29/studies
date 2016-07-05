@@ -1,0 +1,20 @@
+<html>
+	<head>
+	<title>
+		Color Pick
+	</title>
+	<script>
+		function colorChange(input_color){
+			console.log(input_color);
+			document.getElementById('body_name').style.backgroundColor=input_color;
+		}
+	</script>
+	</head>
+		<body id="body_name">
+			<form>
+				<p><input type="radio" name ="mycolor" id="mycolor" value="#FF0000" onclick="colorChange(this.value)">RED</input></p>
+				<p><input type="radio" name ="mycolor" id="mycolor" value="#00FF00" onclick="colorChange(this.value)">GREEN</input></p>
+				<p><input type="radio" name ="mycolor" id="mycolor" value="#0000FF" onclick="colorChange(this.value)">BLUE</input></p>
+			</form>
+		</body>
+</html>
