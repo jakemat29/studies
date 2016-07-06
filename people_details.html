@@ -2,57 +2,18 @@
 <title>
 Personal Information
 </title>
-<body>
-<h1 align="center" > Application Form</h1>
-<form>
-	<fieldset>
-	<div>
-	<div class="div_style">Name</div>
-	<div class="div_style"><input onchange="nameValidate(this.value);" type="text" name="p_name" id="p_name" ></input></div>
-	<div class="div_style" id="name_error_msg"></div>
-	</div>
-	<div>
-	<div class="div_style">Password</div>
-	<div class="div_style"><input onchange="pwdCompare(this.value)" type="password" name="pwd" id="pwd"></input></div>
-	</div>
-	<div>
-	<div class="div_style">Confirm Password</div>
-	<div class="div_style"><input onchange="pwdValidate(this.value);" type="password" name="cpwd" id="cpwd"></input></div>
-	<div class="div_style id="pwd_error_msg"></div>
-	</div>
-	<div>
-	<div class="div_style">Country</div>
-	<div class="div_style"><select name="country" id="country"></div>
-				<option value="India">India</option>
-				<option value="USA">USA</option>
-			  </select>	
-	</div>		  
-	<p>State<select name="State" id="State">
-				<option value="Kerala">Kerala</option>
-				<option value="Tamilnadu">Tamilnadu</option>
-			  </select>			  
-	<p><button onchange="validate();" name="submit_button" id="submit_button">SUBMIT</button></p>		  
-	</fieldset>
-</form>
-</body>
-
 <head>
 	<style>
 	.div_style {width:20%; display:inline-block;}
 	</style>
 	<script>
 		var pwd2;
-		function nameValidate(input){
-			if(input==" "){
-				document.getElementById('name_error_msg').innerHTML='<span style="color:red;">Name Field Cannot be Empty</span>'
-				}	
-				console.log(input);
-			}
-		function pwdCompare(input){
-			pwd2=input;
-			console.log(pwd2);
+		function isEmpty(input,div_id){
+			if(input==""){
+				document.getElementById(div_id).innerHTML='<span style="color:red;">This is required</span>'
+			}	
 		}
-		function pwdValidate(pwd1){
+		function pwdCompare(pwd1){
 			console.log(pwd1);
 			if(pwd1===pwd2){
 				console.log('Entering if condition');
@@ -69,4 +30,46 @@ Personal Information
 		}*/
 	</script>
 </head>
+
+<body>
+<h1 align="center" > Application Form</h1>
+<form>
+	<fieldset>
+		<div>
+			<div class="div_style">Name</div>
+			<div class="div_style"><input onblur="isEmpty(this.value,'name_error_msg');" type="text" name="p_name" id="p_name" ></input></div>
+			<div class="div_style" id="name_error_msg"></div>
+		</div>
+		<div>
+			<div class="div_style">Password</div>
+			<div class="div_style"><input onblur="isEmpty(this.value,'pwd_error_msg')" type="password" name="pwd" id="pwd"></input></div>
+			<div class="div_style" id="pwd_error_msg"></div>
+		</div>
+		<div>
+			<div class="div_style">Confirm Password</div>
+			<div class="div_style"><input onblur="isEmpty(this.value,'cpwd_error_msg');" type="password" name="cpwd" id="cpwd"></input></div>
+			<div class="div_style" id="cpwd_error_msg"></div>
+		</div>
+		<div>
+			<div class="div_style">Country</div>
+			<div class="div_style">
+				<select name="country" id="country"></div>
+					<option value=""></option>
+					<option value="India">India</option>
+					<option value="USA">USA</option>
+			    </select>	
+		</div>	
+		<div>
+			<div class="div_style">State</div>
+			<div class="div_style">	
+				<select name="State" id="State">
+					<option value="Kerala">Kerala</option>
+					<option value="Tamilnadu">Tamilnadu</option>
+				</select>			  
+			</div>
+		<p><button onchange="validate();" name="submit_button" id="submit_button">SUBMIT</button></p>		  
+	</fieldset>
+</form>
+</body>
+
 </html

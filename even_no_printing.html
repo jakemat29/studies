@@ -1,19 +1,17 @@
 <html>
-
+<head>
+	</head>
 <body>
 	<p id="count"></br></p>
 </body>
-<head>
-	<script>
-		var i;
-		function evencount(){
-			for(i=0;i<=100;i+=2)
-				{console.log(i);
-				document.getElementById('count').innerHTML=i;
-				}
+<script>
+	var i;
+	function evenCount(){
+		for(i=0;i<=100;i+=2){
+			console.log(i);
+			document.getElementById('count').innerHTML=document.getElementById('count').innerHTML+", "+i;
 		}
-		evencount();
-		
-	</script>
-</head>
+	}
+	evenCount();
+</script>
 </html>
