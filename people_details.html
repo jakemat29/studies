@@ -25,11 +25,37 @@ Personal Information
 				
 			}
 		}
-		function selectState(inp){
-			console.log(inp);
-			var ind_states={kerala:kerala,tamilnadu:tamilnadu};
-			var opt= document.getElementById('state').options[0]=ind_states.kerala;
+		function emptyState(){
+			var x = document.getElementById("State");
 			
+			while(x.options.length>0){	
+				console.log(x.options.length);
+				x.remove(0);
+				//console.log(x.options.length);
+			}
+			x.selectedIndex=0;
+		}
+		function selectState(inp){
+		var x = document.getElementById("State");
+		var select_state=[];
+			emptyState();
+			//console.log(inp);
+			var ind_states=[{"text":"kerala","value":"kerala"},{"text":"tamilnadu","value":"tamilnadu"}];
+			var USA_states=[{"text":"colorado","value":"colorado"},{"text":"california","value":"california"}];
+			if(inp=="India"){
+				select_state=ind_states;}
+				//console.log(select_state);
+				//document.getElementById('State').options=ind_states;
+				//console.log(document.getElementById('State').options);
+			if(inp=="USA"){
+				select_state=USA_states;}
+				//console.log(select_state);
+				for( var i=0;i<select_state.length;i++){
+						var option = document.createElement("option");
+						option.text=select_state[i].text;
+						option.value=select_state[i].value;
+						x.add(option);
+					}
 		}
 	</script>
 </head>
@@ -66,7 +92,7 @@ Personal Information
 			<div class="div_style">State</div>
 			<div class="div_style">	
 				<select name="State" id="State">
-					<option value=""> </option>
+					<option value="1">1 </option>
 				</select>			  
 			</div>
 		<p><button onchange="validate();" name="submit_button" id="submit_button">SUBMIT</button></p>		  
