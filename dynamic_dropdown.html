@@ -4,15 +4,19 @@
 		//Reference: http://stackoverflow.com/questions/8716064/html-js-how-to-change-option-value-of-select-type-using-js
 		function changeContent(){
 			var opt= document.getElementById('dyna').options[0];
-			opt.value =  'Two';
+			opt.value =  2;
 			opt.text = 'Two';
+			var opt= document.getElementById('dyna').options[1];
+			opt.value =  4;
+			opt.text = 'Four';
 		}
 		</script>
 	</head>
 	<body>
 		<form name="test">
 			<select name="dyna" id="dyna">
-				<option value="One">One</option>
+				<option value="1">One</option>
+				<option value="3">Three</option>
 			</select>
 			<input type="button" value="Switch" onclick="changeContent();"></input>
 		</form>

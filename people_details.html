@@ -25,9 +25,12 @@ Personal Information
 				
 			}
 		}
-		/*function countrySelect(){
-		
-		}*/
+		function selectState(inp){
+			console.log(inp);
+			var ind_states={kerala:kerala,tamilnadu:tamilnadu};
+			var opt= document.getElementById('state').options[0]=ind_states.kerala;
+			
+		}
 	</script>
 </head>
 
@@ -53,7 +56,7 @@ Personal Information
 		<div>
 			<div class="div_style">Country</div>
 			<div class="div_style">
-				<select name="country" id="country"></div>
+				<select onchange="selectState(this.value);" name="country" id="country"></div>
 					<option value=""></option>
 					<option value="India">India</option>
 					<option value="USA">USA</option>
@@ -63,8 +66,7 @@ Personal Information
 			<div class="div_style">State</div>
 			<div class="div_style">	
 				<select name="State" id="State">
-					<option value="Kerala">Kerala</option>
-					<option value="Tamilnadu">Tamilnadu</option>
+					<option value=""> </option>
 				</select>			  
 			</div>
 		<p><button onchange="validate();" name="submit_button" id="submit_button">SUBMIT</button></p>		  

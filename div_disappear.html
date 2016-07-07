@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>
+	div disappear
+	</title>
+	
+</head>
+<body>
+	<p>hello there the div element is shown below</p>
+	<div style="width:100%; background-color:red" id="temp">
+	&nbsp
+	</div>
+	<p></p>
+	<p></p>
+	<button onclick="remove1();">HIDE</button>
+	<button onclick="appear1();">APPEAR</button>
+</body>
+<script>
+		var x;
+		function remove1(){
+			document.getElementById('temp').style.display= "none";
+		}
+		function appear1(){
+			document.getElementById('temp').style.display="block";
+		}
+	</script>
+</html>
