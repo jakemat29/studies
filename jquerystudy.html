@@ -6,11 +6,12 @@
 		text-align: center;
 		background-color: #e5eecc;
 		border: solid 1px #c3c3c3;
-	}
+	    }
 
 	#panel {
 		padding: 50px;
 		display: none;
+		}
 	</style>
 	<title>
 	studying jquery
@@ -34,8 +35,12 @@
 		});
 	});
 	$(document).ready(function(){
-		$("flip").click(function(){
+		$("#flip").click(function(){
 			$("#panel").slideDown(slow);
+		});
+		$("#but1").click(function(){
+			$("#div1").animate({width:'500px'});
+			$("#div1").animate({fontSize:'4em'});
 		});
 	});		
 </script>
@@ -74,8 +79,8 @@
 		</div>
 </div>	
 <div>
-<button id="but1">This button will make us disappear</button>	
-<button id="but2">This button will toggle us</button>	
+<button id="but1">This button demonstrate animate</button>	
+<button id="but2">This button will toggle all div</button>	
 </div>
 <div id="flip">Click to slide down panel</div>
 <div id="panel">Hello world!</div>
