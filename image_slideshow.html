@@ -33,50 +33,48 @@
 	var images = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg"];
 
 	function prev(){
-	    $( '#slideshow_image' ).fadeOut();
+	    //$('#slideshow_image').fadeOut();
 		var prev_val = document.getElementById( "img_no" ).value;
+		console.log(prev_val);
 		var prev_val = Number(prev_val) - 1;
 		console.log(prev_val);
 		if(prev_val<=-1){
 			prev_val = images.length - 1;
-			$( '#slideshow_image' ).attr(images[prev_val]);
+			$('#slideshow_image').attr('src',images[prev_val]);
 		}
 		else{
-			$('#slideshow_image').fadeIn(images[prev_val]);
-			document.getElementById( "img_no" ).value = prev_val;
+			$('#slideshow_image').attr('src',images[prev_val]);
+			document.getElementById('img_no').value = prev_val;
 		}
 	}
 
 	function next(){
-		$('#slideshow_image').fadeOut();
-		var next_val = document.getElementById( "img_no" ).value;
+		//$('#slideshow_image').fadeOut();
+		var next_val = document.getElementById('img_no').value;
 		console.log(next_val);
 		var next_val=next_val+1;
 		console.log(images[images.length-1]);
 		if(next_val >= images.length){
 				next_val = 0;
-				$( '#slideshow_image' ).attr(images[next_val]);
+				$('#slideshow_image').attr('src',images[next_val]);
 				
 		}
 			else{
-				$('#slideshow_image').attr(images[next_val]);      
-				document.getElementById( "img_no" ).value = next_val;
+				$('#slideshow_image').attr('src',images[next_val]);      
+				document.getElementById('img_no').value = next_val;
 			}	
 	}
      </script>
    </head>
    
-   <body>
-
-     <center>
-          
-        <div id="slide_div">
-            <img id="slideshow_image">
-        </div>
-        <input type="image" id="prev_image" src="previous.png" >
-        <input type="image" id="next_image" src="next.png" >
-        <input type="hidden" id="img_no" value="0">
-
-     </center>
-   </body>
+<body>
+    <center>
+	<div id="slide_div">
+		<img  src="image1.jpg" id="slideshow_image">
+    </div>
+    <input type="image" id="prev_image" src="previous.png" >
+    <input type="image" id="next_image" src="next.png" >
+    <input type="hidden" id="img_no" value="0">
+	</center>
+</body>
 </html>
