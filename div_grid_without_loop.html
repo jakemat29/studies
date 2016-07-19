@@ -1,0 +1,53 @@
+<html>
+<head>
+	<style>
+			.grid1{
+			background-color: white;
+			width:45px;
+			border:5px solid grey;
+			padding:25px;
+			margin:25px;
+			float:left;
+		}
+	</style>	
+	<script src="jquery-3.0.0.js"></script>
+	<script>
+		
+		function colorChange(div_id){
+			$(document).ready(function(){
+			var change = document.getElementById(div_id);
+			
+			//console.log(change.style.backgroundColor);
+			var x= " ";
+			x=change.style.backgroundColor;
+			//console.log(x);
+			change.style.backgroundColor= 'black';
+			if(x === "black") {
+				change.style.backgroundColor='white';
+			}
+			
+			});
+		}
+		
+	</script>
+</head>
+<body>
+	<div>
+	<div class="grid1" id='div1' onmouseover=colorChange('div1');> 
+	&nbsp
+	</div>
+	<div class="grid1" id='div2' onmouseover=colorChange('div2');> 
+	&nbsp
+	</div>
+	<div class="grid1" id='div3' onmouseover=colorChange('div3');> 
+	&nbsp
+	</div>
+	<div class="grid1" id='div4' onmouseover=colorChange('div4');> 
+	&nbsp
+	</div>
+	<div class="grid1" id='div5' onmouseover=colorChange('div5');> 
+	&nbsp
+	</div>
+	</div>
+</body>
+</html>

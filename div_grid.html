@@ -9,39 +9,27 @@
 			margin:25px;
 			float:left;
 		}
-	</style>	
+	</style>
+	<script src="jquery-3.0.0.js"></script>	
 	<script>
-		/*$(document).ready(function(){
-		for(var i=0;i<=3;i++){
-		$(div).append('<div id="'id'+i"/>');
-		//document.getElementById('id+"i"').display;
-		}});*/
-		function colorChange(div_id){
-			//var div_id="div"+i;
-			//var change=document.getElementById('div_id');
-			div_id.style.backgroundColor='black';
-			console.log('2');
+		$(document).ready(function() {
+			var divId = "";
+			for (i = 0; i < 3; i++) {
+				divId += '<div id="div' + (++i) + '" />';        
+			}
+			$('body').append(divId);
+		function change_Color(){
+			document.getElementById('divId').style.backgroundColor='black';
 		}
+		});​​
+		
 		
 	</script>
 </head>
 <body>
-	<div>
-	<div class="grid1" id='div1' onmouseover=colorChange(div1);> 
+	
+	<div class="grid1" onmouseover="change_Color();"> 
 	&nbsp
-	</div>
-	<div class="grid1" id='div2' onmouseover=colorChange(div2);> 
-	&nbsp
-	</div>
-	<div class="grid1" id='div3' onmouseover=colorChange(div3);> 
-	&nbsp
-	</div>
-	<div class="grid1" id='div4' onmouseover=colorChange(div4);> 
-	&nbsp
-	</div>
-	<div class="grid1" id='div5' onmouseover=colorChange(div5);> 
-	&nbsp
-	</div>
 	</div>
 </body>
 </html>
