@@ -2,7 +2,7 @@
 <head>
 	<style>
 			.grid1{
-			background-color: lightgrey;
+			background-color: white;
 			width:45px;
 			border:5px solid grey;
 			padding:25px;
@@ -12,23 +12,32 @@
 	</style>
 	<script src="jquery-3.0.0.js"></script>	
 	<script>
+	var i=0;
 		$(document).ready(function() {
-			var divId = "";
-			for (i = 0; i < 3; i++) {
-				divId += '<div id="div' + (++i) + '" />';        
+			var cell = " ";
+			for(i=1; i <= 3; i++){
+				var x="cell" + i;
+				//console.log(x);
+				cell += '<div id = x class="grid1" onmouseover="change_Color(x)" />';        
+				//console.log(cell);
 			}
-			$('body').append(divId);
-		function change_Color(){
-			document.getElementById('divId').style.backgroundColor='black';
+				$("#bdy_id").append(cell);
+		});
+		function change_Color(div_id){
+			//var change=div_id
+			//$('#change').style.backgroundColor= 'black';
+			//var change = document.getElementById('cell1');
+			//console.log(change.style.backgroundColor);
+			console.log(div_id);
 		}
-		});​​
+		
 		
 		
 	</script>
 </head>
-<body>
+<body id="bdy_id">
 	
-	<div class="grid1" onmouseover="change_Color();"> 
+	<div> 
 	&nbsp
 	</div>
 </body>
