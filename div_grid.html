@@ -12,23 +12,40 @@
 	</style>
 	<script src="jquery-3.0.0.js"></script>	
 	<script>
-	var i=0;
+		var i=0;
+		var j=0;
+		var row=3;
+		var col=4;
 		$(document).ready(function() {
-			var cell = " ";
-			for(i=1; i <= 3; i++){
-				var x="cell" + i;
-				//console.log(x);
-				cell += '<div id = x class="grid1" onmouseover="change_Color(x)" />';        
-				//console.log(cell);
+			var result = " ";
+			for(i=1; i <= row; i++){
+				
+				for(j=1; j <= col; j++){
+						
+					var x="cell" + i + j;
+					//console.log(x);
+					result = result + '<div id = '+ x +' class="grid1" onmouseover= change_Color("'+x+'")/>';        
+					//console.log(result);
+					
+				}   
+				$("#parent").append(newline);
 			}
-				$("#bdy_id").append(cell);
+			$("#parent").append(result);
+
 		});
 		function change_Color(div_id){
-			//var change=div_id
-			//$('#change').style.backgroundColor= 'black';
-			//var change = document.getElementById('cell1');
+			//console.log(div_id);
+			$(document).ready(function(){
+				var change = document.getElementById(div_id);
 			//console.log(change.style.backgroundColor);
-			console.log(div_id);
+				var x= " ";
+				x=change.style.backgroundColor;
+			//console.log(x);
+				change.style.backgroundColor= 'black';
+				if(x === "black") {
+					change.style.backgroundColor='white';
+				}
+			});
 		}
 		
 		
@@ -37,7 +54,7 @@
 </head>
 <body id="bdy_id">
 	
-	<div> 
+	<div id="parent"> 
 	&nbsp
 	</div>
 </body>
