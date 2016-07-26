@@ -9,6 +9,11 @@
 			margin:25px;
 			float:left;
 		}
+		.p_class{
+		width:auto;
+		height:auto;
+		border:5px solid grey;
+		}
 	</style>
 	<script src="jquery-3.0.0.js"></script>	
 	<script>
@@ -18,29 +23,36 @@
 		var col=4;
 		$(document).ready(function() {
 			var result = " ";
+			var line=" ";
 			for(i=1; i <= row; i++){
+				//line = line +  '<div id = "child' +i+ '/>'
+				//$(#bdy_id).append('<div id=p'+i+">)"
+				
+					
 				
 				for(j=1; j <= col; j++){
-						
 					var x="cell" + i + j;
 					//console.log(x);
-					result = result + '<div id = '+ x +' class="grid1" onmouseover= change_Color("'+x+'")/>';        
+					result = result + '<div id = '+ x +' class="grid1" onmouseover= change_Color("'+x+'") />';        
+					/*if(j == col){
+						$(#bdy_id).append('</div)'
+						}*/
 					//console.log(result);
 					
-				}   
-				$("#parent").append(newline);
+				} 
+				//$("#parent").append(line);
 			}
-			$("#parent").append(result);
-
+			$("#bdy_id").append(result);
 		});
+		
 		function change_Color(div_id){
 			//console.log(div_id);
 			$(document).ready(function(){
 				var change = document.getElementById(div_id);
-			//console.log(change.style.backgroundColor);
+				//console.log(change.style.backgroundColor);
 				var x= " ";
 				x=change.style.backgroundColor;
-			//console.log(x);
+				//console.log(x);
 				change.style.backgroundColor= 'black';
 				if(x === "black") {
 					change.style.backgroundColor='white';
@@ -54,8 +66,10 @@
 </head>
 <body id="bdy_id">
 	
-	<div id="parent"> 
-	&nbsp
+	<div id="parent" class="p_class"> 
+		<div id="child">
+		</div>
 	</div>
+	
 </body>
 </html>

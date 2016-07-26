@@ -2,13 +2,23 @@
 <head>
 	<style>
 			.grid1{
+			
 			background-color: white;
 			width:45px;
 			border:5px solid grey;
 			padding:25px;
 			margin:25px;
 			float:left;
-		}
+			position:relative;
+		    }
+			
+			.row{
+			border:25px black;
+			height:50%;
+			width:auto;
+			
+			}
+		
 	</style>	
 	<script src="jquery-3.0.0.js"></script>
 	<script>
@@ -32,22 +42,44 @@
 	</script>
 </head>
 <body>
-	<div>
-	<div class="grid1" id='div1' onmouseover=colorChange('div1');> 
+	
+	<div id="row1" class="row">
 	&nbsp
+		<div class="grid1" id='div11' onmouseover=colorChange('div11');> 
+		&nbsp
+		</div>
+		<div class="grid1" id='div12' onmouseover=colorChange('div12');> 
+		&nbsp
+		</div>
+		<div class="grid1" id='div13' onmouseover=colorChange('div13');> 
+		&nbsp
+		</div>
+		<div class="grid1" id='div14' onmouseover=colorChange('div14');> 
+		&nbsp
+		</div>
+		<div class="grid1" id='div15' onmouseover=colorChange('div15');> 
+		&nbsp
+		</div>
 	</div>
-	<div class="grid1" id='div2' onmouseover=colorChange('div2');> 
+	
+	<div id="row2" class="row">
 	&nbsp
+		<div class="grid1" id='div21' onmouseover=colorChange('div21');> 
+		&nbsp
+		</div>
+		<div class="grid1" id='div22' onmouseover=colorChange('div22');> 
+		&nbsp
+		</div>
+		<div class="grid1" id='div23' onmouseover=colorChange('div23');> 
+		&nbsp
+		</div>
+		<div class="grid1" id='div24' onmouseover=colorChange('div24');> 
+		&nbsp
+		</div>
+		<div class="grid1" id='div25' onmouseover=colorChange('div25');> 
+		&nbsp
+		</div>
 	</div>
-	<div class="grid1" id='div3' onmouseover=colorChange('div3');> 
-	&nbsp
-	</div>
-	<div class="grid1" id='div4' onmouseover=colorChange('div4');> 
-	&nbsp
-	</div>
-	<div class="grid1" id='div5' onmouseover=colorChange('div5');> 
-	&nbsp
-	</div>
-	</div>
+	
 </body>
 </html>

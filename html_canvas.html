@@ -1,0 +1,23 @@
+<html>
+<head>
+<script src="jquery-3.0.0.js"></script>	
+<script>
+	var c = document.getElementById("myCanvas");   // $('#myCanvas')[0];
+	console.log(c);
+	
+	var ctx = c.getContext("2d");
+	ctx.beginPath();
+	ctx.arc(100 , 75, 50, 0, 2 * Math.PI);
+	ctx.stroke();
+</script>
+</head>
+<body>
+<center>
+<canvas id="myCanvas" height ="200px" width="300px%" style="border:5px solid #0DE000";>
+</canvas>
+<center>
+</body>
+
+
+
+</html>
