@@ -8,13 +8,16 @@
 			padding:25px;
 			margin:25px;
 			float:left;
+			position:relative;
 		}
-		.p_class{
-		width:auto;
-		height:auto;
-		border:5px solid grey;
+		.parent_class{
+			overflow:auto;
+			border:5px solid grey;
+			position:relative;
+			height:50%;
 		}
 	</style>
+	
 	<script src="jquery-3.0.0.js"></script>	
 	<script>
 		var i=0;
@@ -23,24 +26,20 @@
 		var col=4;
 		$(document).ready(function() {
 			var result = " ";
-			var line=" ";
+			
 			for(i=1; i <= row; i++){
-				//line = line +  '<div id = "child' +i+ '/>'
-				//$(#bdy_id).append('<div id=p'+i+">)"
-				
-					
-				
+				result = result +  '<div id = "parent' +i+ ' class = "parent_class"> '
 				for(j=1; j <= col; j++){
 					var x="cell" + i + j;
 					//console.log(x);
-					result = result + '<div id = '+ x +' class="grid1" onmouseover= change_Color("'+x+'") />';        
-					/*if(j == col){
-						$(#bdy_id).append('</div)'
-						}*/
+					result = result + '<div id = '+ x +' class="grid1" onmouseover= change_Color("'+x+'") /> ';        
+					
+					if (j == col){
+						result = result + '</div>';
+						}
 					//console.log(result);
 					
 				} 
-				//$("#parent").append(line);
 			}
 			$("#bdy_id").append(result);
 		});
@@ -59,17 +58,10 @@
 				}
 			});
 		}
-		
-		
-		
 	</script>
 </head>
+
 <body id="bdy_id">
-	
-	<div id="parent" class="p_class"> 
-		<div id="child">
-		</div>
-	</div>
 	
 </body>
 </html>
