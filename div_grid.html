@@ -1,45 +1,46 @@
 <html>
 <head>
 	<style>
-			.grid1{
-			background-color: white;
-			width:45px;
-			border:5px solid grey;
-			padding:25px;
-			margin:25px;
-			float:left;
-			position:relative;
-		}
-		.parent_class{
-			overflow:auto;
-			border:5px solid grey;
-			position:relative;
-			height:50%;
-		}
+			.cell{
+				background-color: white;
+				width:45px;
+				border:5px solid grey;
+				padding:25px;
+				margin:5px;
+				float:left;
+				position:relative;
+		    }
+		    
+.parent_class{
+				overflow:auto;
+				position:relative;
+				height:100px;
+			}
 	</style>
 	
 	<script src="jquery-3.0.0.js"></script>	
 	<script>
 		var i=0;
 		var j=0;
-		var row=3;
-		var col=4;
+		var row=11;
+		var col=11;
 		$(document).ready(function() {
 			var result = " ";
 			
 			for(i=1; i <= row; i++){
-				result = result +  '<div id = "parent' +i+ ' class = "parent_class"> '
+				result = result +  '<div id = "parent"' +i+ ' class = "parent_class"> '
 				for(j=1; j <= col; j++){
 					var x="cell" + i + j;
 					//console.log(x);
-					result = result + '<div id = '+ x +' class="grid1" onmouseover= change_Color("'+x+'") /> ';        
+					result = result + '<div id = '+ x +' class="cell" onmouseover= change_Color("'+x+'") /> ';        
 					
-					if (j == col){
-						result = result + '</div>';
-						}
+					
 					//console.log(result);
 					
 				} 
+			
+						result = result + '</div>';
+						
 			}
 			$("#bdy_id").append(result);
 		});
@@ -62,6 +63,7 @@
 </head>
 
 <body id="bdy_id">
-	
+	<center>
+	</center>
 </body>
 </html>
